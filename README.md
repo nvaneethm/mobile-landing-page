@@ -6,43 +6,42 @@ Responsive, smooth, and performant movie listing app using **Vite + React + Type
 ---
 
 #  Requirements Met
-
- **1. Vertical Scroll Only, No Horizontal Scroll + Virtualized Optimized Grid**
+**1. Vertical Scroll Only, No Horizontal Scroll + Virtualized Optimized Grid**
 
 - The movie grid **only scrolls vertically**, no horizontal overflow.
 - Layout is **grid-based** with proper `overflow-y: scroll` and restricted `overflow-x: hidden`.
 - Virtualization is optimized by **lazy rendering** using **IntersectionObserver** – only images in view are loaded.
 
-  **2. Lazy Loading of Content**
+**2. Lazy Loading of Content**
 
 - **First page** is loaded on app start.
 - **Next pages** (`page2.json`, `page3.json`, etc.) are fetched **seamlessly** as the user scrolls **near the bottom**.
 - **Skeleton loaders** are shown while new data is being appended — **no blocking spinner or scroll freeze**.
 
-  **3. Client-Side Search Without API**
+**3. Client-Side Search Without API**
 
 - Search is implemented **purely client-side** using **Context API + useReducer**.
 - Already loaded movie data is **filtered instantly** based on the search query.
 - **No page reloads**, **no API calls**, and **results are shown live** in the main view itself.
 
-  **4. Focus / Long Press Scale Animation**
+**4. Focus / Long Press Scale Animation**
 
 - When a card is **hovered**, **focused** (keyboard), or **long pressed** (touch devices), a **smooth scale effect** is applied.
 - CSS transitions are handled efficiently for a buttery-smooth experience.
 
-  **5. Arrow Key Navigation**
+**5. Arrow Key Navigation**
 
 - **Custom `useArrowNavigation` hook** is implemented.
 - Users can **navigate between movie cards** using **Arrow keys (⬅️ ➡️ ⬆️ ⬇️)**, without any third-party library.
 
-  **6. Proper Paginated API Handling**
+**6. Proper Paginated API Handling**
 
 - Only **page1.json** is fetched initially.
 - As the user scrolls and approaches the end of the grid, **next page is requested dynamically**.
 - **No preloading of all pages at once**.
 - Fetches are **smooth**, **non-blocking**, and **do not interrupt scrolling**.
 
-  **7. Proper Data Flow Management**
+**7. Proper Data Flow Management**
 
 - **Context API** + **useReducer** is used to manage:
   - Search state (query, suggestions, search mode)
@@ -50,7 +49,7 @@ Responsive, smooth, and performant movie listing app using **Vite + React + Type
 - Local caching of pages in **localStorage** with **TTL** expiration.
 - Centralized hooks for data fetching (`useMovies`), scrolling (`useInfiniteScroll`), and arrow navigation.
 
-  **8. Performance Optimizations**
+**8. Performance Optimizations**
 
 - **Lazy loading** of images (only load images as they come into view).
 - **Memoization** (`React.memo`) of cards (`MovieCard` component).
